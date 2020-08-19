@@ -20,7 +20,7 @@ import org.junit.jupiter.params.provider.CsvSource;
  * the expected output would be [120, 60, 40, 30, 24]. 
  * If our input was [3, 2, 1], the expected output would be [2, 3, 6]
  */
-public class ProductArrayPuzzle {
+public class ProductArrayPuzzleTest {
     
     @ParameterizedTest(name = "\"{0}\" should be {1}")
     @CsvSource({ "1:2:3:4:5, 120:60:40:30:24","3:2:1,2:3:6"})
@@ -37,6 +37,7 @@ public class ProductArrayPuzzle {
             output.add(product);
         }
 
+        System.out.println(""+Arrays.toString(output.toArray()));
         assertTrue(expects.containsAll(output), Arrays.toString(output.toArray()));
 
     }
